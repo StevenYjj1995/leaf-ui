@@ -63,7 +63,7 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: white;
   }
 }
 aside {
@@ -84,13 +84,6 @@ aside {
       padding: 4px 0;
     }
   }
-
-  //@media (max-width: 500px) {
-  //  position: fixed;
-  //  top: 0;
-  //  left: 0;
-  //  padding-top: 70px;
-  //}
   main{
     overflow: auto;
   }
