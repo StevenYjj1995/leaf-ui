@@ -1,15 +1,13 @@
 <template>
-  <div>hi</div>
-  <Yjj/>
+  <div>导航栏|<router-link to="/">Yjj1</router-link>|<router-link to="/xxx">Yjj2</router-link></div>
+  <hr>
+  <router-view/>
 </template>
 
 <script>
-import Yjj from './components/Yjj.vue'
 
 export default {
   name: 'App',
-  components: {
-    Yjj
-  }
+
 }
 </script>
