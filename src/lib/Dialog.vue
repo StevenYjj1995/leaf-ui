@@ -1,5 +1,6 @@
 <template>
   <template v-if="visible">
+    <teleport to="body">
     <div class="jj-dialog-overlay" @click="onClickOverlay"></div>
     <div class="jj-dialog-wrapper">
       <div class="jj-dialog">
@@ -15,6 +16,7 @@
         </footer>
       </div>
     </div>
+    </teleport>
   </template>
 </template>
 <script>
