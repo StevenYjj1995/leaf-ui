@@ -24,10 +24,6 @@ import Button from "./Button.vue"
 
 export default {
   props: {
-    // title: {
-    //   type: String,
-    //   default: '提示'
-    // },
     visible: {
       type: Boolean,
       default: false
@@ -59,7 +55,7 @@ export default {
       }
     }
     const cancel = () => {
-      context.emit('cancel')
+      props.cancel?.()
       close()
     }
     return {close, onClickOverlay, ok, cancel}
