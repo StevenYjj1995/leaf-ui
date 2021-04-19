@@ -6,6 +6,7 @@
            :class="{selected:t===selected}"
            v-for="(t,index) in titles" :key="index">{{ t }}
       </div>
+      <div class="jj-tabs-nav-indicator"></div>
     </div>
     <div class="jj-tabs-content">
       <component class="jj-tabs-content-item" :is="current" :key="current.props.title"/>
@@ -53,6 +54,7 @@ $border-color: #d9d9d9;
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
+    position: relative;
 
     &-item {
       padding: 8px 0;
@@ -67,8 +69,15 @@ $border-color: #d9d9d9;
         color: $blue;
       }
     }
+    &-indicator{
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      width: 100px;
+    }
   }
-
   &-content {
     padding: 8px 0;
   }
