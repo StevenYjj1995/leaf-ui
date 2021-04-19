@@ -1,5 +1,6 @@
 <template>
   <button class="jj-button" :class="classes" :disabled="disabled">
+    <span class="jj-loadingIndicator" v-if="loading"></span>
     <slot/>
   </button>
 </template>
@@ -21,6 +22,10 @@ export default {
       default: 'normal'
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    loading: {
       type: Boolean,
       default: false
     }
@@ -131,6 +136,7 @@ $grey: grey;
       background: $red;
       border-color: $red;
       color: white;
+
       &:hover,
       &:focus {
         background: darken($red, 10%);
@@ -169,20 +175,46 @@ $grey: grey;
       }
     }
   }
+
   &.jj-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
+
       &:hover {
         border-color: $grey;
       }
     }
   }
+
   &.jj-theme-link, &.jj-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
+
+  > .jj-loadingIndicator {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-color: $blue $blue $blue transparent;
+    border-style: solid;
+    border-width: 2px;
+    animation: jj-spin 1s infinite linear;
+  }
 }
+
+@keyframes jj-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+
 </style>
