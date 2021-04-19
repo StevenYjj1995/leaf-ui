@@ -15,6 +15,16 @@
     <Button>普通</Button>
     <Button size="small">小按钮</Button>
   </div>
+  <div>
+    <Button size="big" theme="link">大按钮</Button>
+    <Button theme="link">普通</Button>
+    <Button size="small" theme="link">小按钮</Button>
+  </div>
+  <div>
+    <Button size="big" theme="text">大按钮</Button>
+    <Button theme="text">普通</Button>
+    <Button size="small" theme="text">小按钮</Button>
+  </div>
 </template>
 <script lang="ts">
 import Button from '../lib/Button.vue';
