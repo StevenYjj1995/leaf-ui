@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{checked:value}"><span></span></button>
+  <button class="jj-switch" @click="toggle" :class="{'jj-checked':value}"><span></span></button>
 </template>
 <script lang="ts">
 
@@ -16,10 +16,10 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 22px;
 $h2: $h - 4px;
-button {
+.jj-switch {
   height: $h;
   width: $h*2;
   border: none;
@@ -38,7 +38,7 @@ button {
     transition: all 250ms;
   }
 
-  &.checked {
+  &.jj-checked {
     background: #1890ff;
 
     > span {
@@ -56,7 +56,7 @@ button {
     }
   }
 
-  &.checked:active {
+  &.jj-checked:active {
     > span {
       width: $h2 + 4px;
       margin-left: -4px;
