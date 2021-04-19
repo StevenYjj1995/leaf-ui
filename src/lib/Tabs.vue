@@ -32,7 +32,6 @@ export default {
     const x = () => {
       const divs = navItems.value;
       const result = divs.find(div => div.classList.contains('selected'));
-      // console.log(result);
       const {width} = result.getBoundingClientRect();
       indicator.value.style.width = width + 'px';
       const {left: left1} = container.value.getBoundingClientRect();
@@ -40,7 +39,6 @@ export default {
       const left = left2 - left1;
       indicator.value.style.left = left + 'px';
     };
-    //只在第一次渲染执行
     onMounted(x);
     onUpdated(x);
     const defaults = context.slots.default();
