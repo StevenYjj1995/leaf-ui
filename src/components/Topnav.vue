@@ -7,13 +7,19 @@
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside" @click="toggleAside"></span>
+    <span v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside"></span>
   </div>
 </template>
 <script lang="ts">
 import {inject, Ref} from 'vue';
 
 export default {
+  props:{
+    toggleAsideButtonVisible:{
+      type:Boolean,
+      default:false
+    }
+  },
   setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const toggleAside = () => {
@@ -43,6 +49,30 @@ $color:#00889c;
     > svg{
       width: 32px;
       height: 32px;
+      color: $color;
+      -webkit-animation: rotate 10s linear infinite;
+      @keyframes rotate {
+        0%{
+          transform:rotate(0deg);
+          -ms-transform:rotate(0deg);     /* IE 9 */
+          -moz-transform:rotate(0deg);    /* Firefox */
+          -o-transform:rotate(0deg);
+        }
+        100% {
+          transform:rotate(360deg);
+          -ms-transform:rotate(360deg);   /* IE 9 */
+          -moz-transform:rotate(360deg);  /* Firefox */
+          -o-transform:rotate(360deg);
+        }
+      }
+      @-webkit-keyframes rotate {
+        0%{
+          -moz-transform:rotate(0deg);
+        }
+        100%{
+          -moz-transform:rotate(360deg);
+        }
+      }
     }
   }
 
