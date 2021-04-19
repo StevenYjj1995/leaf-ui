@@ -14,7 +14,7 @@
   <h1>示例2</h1>
   <Button @click="showDialog">show</Button>
 </template>
-<script>
+<script lang="ts">
 import Dialog from "../lib/Dialog.vue"
 import Button from "../lib/Button.vue"
 import {ref} from "vue"
