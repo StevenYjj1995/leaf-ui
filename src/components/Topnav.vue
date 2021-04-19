@@ -1,8 +1,8 @@
 <template>
   <div class="topnav">
-    <div class="logo"><svg class="icon" :class="{'logo-svg-run':logoRunVisible}">
+    <router-link to="/" class="logo"><svg class="icon" :class="{'logo-svg-run':logoRunVisible}">
       <use xlink:href="#icon-leaf"></use>
-    </svg></div>
+    </svg></router-link>
     <ul class="menu">
       <router-link to="/doc">文档</router-link>
     </ul>
