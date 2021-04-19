@@ -6,7 +6,9 @@
     <ul class="menu">
       <router-link to="/doc">文档</router-link>
     </ul>
-    <span v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside"></span>
+    <svg v-if="toggleAsideButtonVisible" class="toggleAside" @click="toggleAside">
+      <use xlink:href="#icon-menu"></use>
+    </svg>
   </div>
 </template>
 <script lang="ts">
@@ -90,9 +92,9 @@ $color:#00889c;
     }
   }
   > .toggleAside{
-    width: 24px;
-    height: 24px;
-    background: red;
+    width: 32px;
+    height: 32px;
+    background: fade-out($color,0.9);
     position: absolute;
     left: 16px;
     top: 50%;
