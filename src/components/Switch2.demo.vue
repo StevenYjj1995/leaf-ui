@@ -2,6 +2,7 @@
 支持 disabled
 </demo>
 <template>
+  <p>禁用的切换</p>
   <Switch v-model:value="bool" disabled/>
 </template>
 <script lang="ts">

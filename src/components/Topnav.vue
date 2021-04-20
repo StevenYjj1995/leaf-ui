@@ -1,5 +1,5 @@
 <template>
-  <div class="topnav">
+  <div class="topnav" :class="{'topnav-background':topnavBackground}">
     <router-link to="/" class="logo"><svg class="icon" :class="{'logo-svg-run':logoRunVisible}">
       <use xlink:href="#icon-leaf"></use>
     </svg></router-link>
@@ -23,6 +23,9 @@ export default {
     logoRunVisible:{
       type:Boolean,
       default:false
+    },
+    topnavBackground:{
+      type:Boolean,
     }
   },
   setup() {
@@ -36,6 +39,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 $color:#00889c;
+.topnav-background{
+  background: white;
+}
 .topnav {
   color: $color;
   display: flex;
@@ -44,10 +50,10 @@ $color:#00889c;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 20;
   justify-content: center;
   align-items: center;
-
+  box-shadow: 0 5px 5px rgb(51 51 51 / 5%);
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -102,6 +108,7 @@ $color:#00889c;
     display: none;
   }
   @media (max-width: 500px) {
+    background: white;
     >.menu{
       display: none;
     }
