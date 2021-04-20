@@ -6,21 +6,14 @@
   </div>
 </template>
 <script lang="ts">
-import Switch from '../lib/Switch.vue';
-import Button from '../lib/Button.vue';
-import {ref} from 'vue';
 import Switch1 from '../components/Switch1.demo.vue';
 import Switch2 from '../components/Switch2.demo.vue';
-import 'prismjs';
-import 'prismjs/themes/prism-okaidia.css';
 import Demo from './Demo.vue';
 
-const Prism = window.Prism;
 export default {
-  components: {Demo, Switch, Button, Switch1, Switch2},
+  components: {Demo, Switch1, Switch2},
   setup() {
-    const bool = ref(false);
-    return {bool, Switch1, Switch2, Prism};
+    return {Switch1, Switch2};
   }
 };
 </script>
